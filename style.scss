@@ -1,0 +1,14 @@
+@use './partials/variables' as *;
+@use './partials/atoms/atoms' as *;
+
+@mixin center {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+body {
+    background: $dark-green;
+    text-align: center;
+    @include center;
+    width: 60%;
+}
