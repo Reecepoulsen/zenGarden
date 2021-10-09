@@ -29,16 +29,48 @@ p {
   padding-bottom: 25px;
 }
 
-a {
+p a {
   color: #f2cea2;
   text-decoration: none;
 }
-a:hover {
+p a:hover {
   font-style: italic;
   color: #D89D38;
 }
-a:visited {
+p a:visited {
   color: #fff;
+}
+
+footer a {
+  color: #000;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.5em;
+  height: 40px;
+  width: 40px;
+  transition: background-color 0.3s;
+}
+footer a::before {
+  content: "";
+  border-radius: 50%;
+  background-color: rgba(216, 157, 56, 0.3);
+  transform: scale(0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  transition: transform 0.3s;
+}
+footer a:hover::before {
+  transform: scale(1);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .lg-img {

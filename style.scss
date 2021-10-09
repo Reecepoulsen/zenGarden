@@ -6,6 +6,10 @@
     width: fit-content;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .lg-img {
     width: 50vw;
     height: auto;
