@@ -29,15 +29,15 @@ p {
   padding-bottom: 25px;
 }
 
-p a {
+p a, p a:link {
   color: #f2cea2;
   text-decoration: none;
 }
-p a:hover {
+p a:hover, p a:link:hover {
   font-style: italic;
   color: #D89D38;
 }
-p a:visited {
+p a:visited, p a:link:visited {
   color: #fff;
 }
 

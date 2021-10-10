@@ -35,7 +35,7 @@ p {
 }
 
 // anchor atoms
-p a {
+p a, p a:link {
     color: $creamy;
     text-decoration: none;
     &:hover {
