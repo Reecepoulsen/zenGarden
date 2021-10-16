@@ -1,14 +1,21 @@
-@use './partials/variables' as *;
-@use './partials/atoms/atoms' as *;
+@import './partials/variables';
+@import './partials/atoms/atoms';
+@import './partials/molecules';
+@import './partials/organisms';
+@import './partials/small';
+@import './partials/medium';
+@import './partials/large';
 
 @mixin center {
     margin: 0 auto;
     width: fit-content;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: $dark-green;
-    text-align: center;
-    @include center;
-    width: 60%;
+    margin: 0;
+    padding: 0;
 }

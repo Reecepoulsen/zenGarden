@@ -9,3 +9,16 @@ $dark: #000;
 $light: #fff;
 $dark-green: #1F261A; //Maybe use as background tint
 $creamy: #f2cea2;
+
+
+@keyframes scrollDown {
+    from {
+        transform: translate(-50%, 20px) rotate(45deg);
+    }
+    45%, 65% {
+        transform: translate(-50%, 0px) rotate(45deg);
+    }
+    to {
+        transform: translate(-50%, 20px) rotate(45deg);
+    }
+}

@@ -1,0 +1,99 @@
+@import './atoms/atoms';
+@import './molecules';
+@import './organisms';
+@import './variables';
+
+@mixin artificial-border-sides {
+    content: '';
+    background-color: $primary;
+    width: 4px;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+}
+
+@mixin dark-section {
+    color: $secondary;
+    background: darken($dark-green, 2.5);
+    padding: 20px 40px;
+    position: relative;
+    h3{
+        position: relative;
+        width: max-content;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+    }
+}
+
+@mixin light-section{
+    background: rgba($color: $creamy, $alpha: .25);
+    padding: 20px 40px;
+    color: $light;
+    h3{
+        margin-top: 20px;
+    }
+}
+
+@mixin header-bars(){
+    content: '';
+    background-color: $primary;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+}
+
+body{ 
+    background-image: url("./resources/imgs/desk.jpeg");    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+}
+
+.page-wrapper{
+    display: grid;
+}
+
+.summary{
+    @include dark-section();
+
+    p {
+        padding-bottom: 0;
+    }
+    
+    p:nth-of-type(2) {
+        display: none;
+    }
+    
+    &::before {
+        @include artificial-border-sides();
+        left: 20px;
+    }
+    &::after {
+        @include artificial-border-sides();
+        right: 20px;
+    }
+}
+
+.preamble{
+    @include light-section();
+}
+
+.main {
+    & > div:nth-of-type(odd) {
+        @include dark-section();
+        h3::before {
+            @include header-bars();
+            top: 0;
+        }
+        h3::after {
+            @include header-bars();
+            bottom: 0;
+        }
+    }
+    & > div:nth-of-type(even) {
+        @include light-section();
+    }
+}

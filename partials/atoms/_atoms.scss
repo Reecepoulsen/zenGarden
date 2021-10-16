@@ -1,1 +1,29 @@
-@use './textAtoms'
+@import './textAtoms';
+
+.viewall{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    font-size: 1.5em;
+    padding: 20px;
+    margin: 0px;
+    text-align: right;
+    background:rgba($color: black, $alpha: .7);
+    border-bottom: 4px solid $light;
+    text-transform: uppercase;
+
+    a::after{
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        transform: translate(5px, -25%) rotate(45deg);
+        border-top: 2px solid $light;
+        border-right: 2px solid $light;
+    }
+
+    a{
+        color: $light;
+        padding-right: 15px;
+    }
+}
