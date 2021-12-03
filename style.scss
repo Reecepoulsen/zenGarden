@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "./partials/variables";
-@import "./partials/medium";
-@import "./partials/large";
 @import "./partials/mixins";
 
 * {
@@ -156,32 +154,34 @@ a {
 }
 
 footer {
-  background: rgba($secondary, 0.7);
-  // border-top: $dark 10px solid;
   display: flex;
-  justify-content: space-between;
   position: fixed;
-  width: 100%;
-  bottom: 0px;
-  padding: 1em 2em;
-  padding-top: 40px;
-  transform: translateY(60%);
-  transition: 0.5s ease transform;
+  justify-content: space-between;
+  @media screen and (max-width: 550px) {
+    background: rgba($secondary, 0.7);
+    // border-top: $dark 10px solid;
+    width: 100%;
+    bottom: 0;
+    padding: 1em 2em;
+    padding-top: 40px;
+    transform: translateY(60%);
+    transition: 0.5s ease transform;
 
-  &:hover,
-  &:focus {
-    transform: translateY(0%);
-  }
+    &:hover,
+    &:focus {
+      transform: translateY(0%);
+    }
 
-  &:before {
-    content: "";
-    width: 40px;
-    height: 5px;
-    background: $light;
-    border-radius: 5px;
-    transform: translate(-50%, -20px);
-    left: 50%;
-    position: absolute;
+    &:before {
+      content: "";
+      width: 40px;
+      height: 5px;
+      background: $light;
+      border-radius: 5px;
+      transform: translate(-50%, -20px);
+      left: 50%;
+      position: absolute;
+    }
   }
 
   a {
@@ -368,3 +368,6 @@ footer {
     padding-right: 15px;
   }
 }
+
+@import "./partials/medium";
+@import "./partials/large";
