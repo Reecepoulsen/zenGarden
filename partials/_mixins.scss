@@ -44,3 +44,29 @@
     position: absolute;
     left: 0;
 }
+
+@mixin two-column-layout() {
+    column-count: 2;
+    grid-column: 1/-1;
+    height: max-content;
+    position: relative;
+    padding: 5em 40px 2em;
+    column-gap: 30px;
+    h3 {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 1em;
+        left: 0;
+    }
+    p {
+        margin: 0;
+        text-align: justify;
+        &:not(:last-child)::after {
+            content: '';
+            display: block;
+            height: 1em;
+            width: 1em;
+        }
+    }
+}

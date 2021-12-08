@@ -122,7 +122,6 @@ h3 {
 }
 
 p {
-  line-height: 1.2em;
   text-align: center;
   line-height: 1.5em;
   font-size: 1.1em;
@@ -139,6 +138,27 @@ a {
   &:visited {
     color: $light;
   }
+}
+
+[role="contentinfo"] {
+    pointer-events: none;
+    position: relative;
+    appearance: none;
+    &, & a {
+        color: transparent;
+    }
+    &::before {
+        content: 'By Dave Shea. Bandwidth graciously donated by mediatemple. Now available: Zen Garden, the book.';
+        text-decoration: line-through black 3px;
+        position: absolute;
+        color: $light;
+    }
+    &::after {
+        content: 'By Jacob, Nate, and Reece. Designed in Advanced CSS, at BYU-Idaho.';
+        padding-top: 1em;
+        display: block;
+        color: $light;
+    }
 }
 
 /* Icon Font */
